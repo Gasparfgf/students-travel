@@ -1,0 +1,24 @@
+services:
+  postgre:
+    container_name: postgresql-studentstravel
+    image: postgre-student
+    environment:
+      POSTGRES_USER: gasparfgf
+      POSTGRES_PASSWORD: isaesm
+      PGDATA: /var/lib/postgresql/data
+      POSTGRES_DB: students_travel
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - 5432:5432
+    networks:
+      - spring-studentstravel
+    restart: unless-stopped
+
+networks:
+  spring-studentstravel:
+    driver: bridge
+
+volumes:
+  postgres:
+    driver: local
