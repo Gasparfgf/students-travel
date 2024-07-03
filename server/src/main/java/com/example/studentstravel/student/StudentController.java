@@ -11,6 +11,10 @@ import java.util.List;
 public class StudentController {
     private StudentService studentService;
 
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
+    }
+
     @GetMapping
     public List<StudentEntity> getAllStudents() {
         return studentService.getAllStudents();
