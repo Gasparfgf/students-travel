@@ -1,7 +1,7 @@
 services:
-  postgre:
+  postgres:
     container_name: postgresql-studentstravel
-    image: postgre-student
+    image: postgres
     environment:
       POSTGRES_USER: gasparfgf
       POSTGRES_PASSWORD: isaesm
